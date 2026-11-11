@@ -94,7 +94,11 @@ async function start(){
   if(!p.ok||!w.ok)throw new Error('Spelbestanden niet gevonden');
   puzzleRows=(await p.text()).trim().split(/\r?\n/);
   dictionary=(await w.text()).trim().split(/\r?\n/);
-  ready=true;changeDate(today);$('loading-info').textContent=`${dictionary.length.toLocaleString('nl-NL')} woorden beschikbaar.`;
- }catch(e){status('Laden mislukt. Open de website via GitHub Pages, niet als los bestand.','bad');console.error(e);}
+  ready=true;
+  changeDate(today);
+  if ($('loading-info')) {
+    $('loading-info').textContent =
+      `${dictionary.length.toLocaleString('nl-NL')} woorden beschikbaar.`;
+  } }catch(e){status('Laden mislukt. Open de website via GitHub Pages, niet als los bestand.','bad');console.error(e);}
 }
 start();
