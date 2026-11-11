@@ -39,7 +39,7 @@ function drawFound(){
  for(const word of [...found].sort((a,b)=>a.localeCompare(b,'nl'))){const data=validWords.get(word);const el=document.createElement('div');el.className='found-item'+(data.pangram?' pangram':'');
  const text=document.createElement('span');text.textContent=word+(data.pangram?' ★':'');const pts=document.createElement('span');pts.className='points';pts.textContent=`+${data.score}`;el.append(text,pts);box.append(el);}
 }
-function drawInput(){const el=$('typed-word');el.textContent=input||'Jouw woord…';el.className=input?'':'placeholder';}
+function drawInput(){const el=$('typed-word');el.textContent=input||'Typ hier';el.className=input?'':'placeholder';}
 function addLetter(c){if(!ready||input.length>=60)return;input+=c;drawInput();}
 function drawLetters(){
  const box=$('honeycomb');box.replaceChildren();letters.forEach((letter,i)=>{const b=document.createElement('button');b.className='hex'+(i===0?' center':'');b.dataset.index=String(i);b.type='button';b.textContent=letter.toUpperCase();b.setAttribute('aria-label',i===0?`Verplichte letter ${letter}`:`Letter ${letter}`);b.addEventListener('click',()=>addLetter(letter));box.append(b);});
