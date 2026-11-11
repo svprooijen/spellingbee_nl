@@ -11,21 +11,20 @@
 </head>
 <body>
  <main class="app">
-   <header class="topbar"><div class="brand"><span class="bee" aria-hidden="true">🐝</span><div><h1>Spelling Bee <span>NL</span></h1><p>Iedere dag een nieuwe uitdaging</p></div></div></header>
+   <header class="topbar"><div class="brand"><span class="bee" aria-hidden="true"></span><div><h1>Spelling Bee NL</h1></div></div></header>
    <section class="date-panel" aria-label="Speeldatum">
      <button id="previous" class="icon-button" aria-label="Vorige dag">‹</button>
      <label class="date-text" for="date-picker"><span class="tiny">Puzzel van</span><span id="date-title">Laden…</span></label>
      <input type="date" id="date-picker" min="2026-10-27" aria-label="Kies een speeldatum">
      <button id="next" class="icon-button" aria-label="Volgende dag">›</button>
    </section>
-   <section class="score-panel" aria-label="Score en voortgang"><div class="score-data"><div><span class="tiny">JOUW SCORE</span><strong id="score">0</strong></div><div class="right"><span class="tiny">JE RANG</span><strong id="rank">Beginner</strong></div></div><div class="progress"><div id="progress-fill"></div></div><div class="score-footer"><span id="progress-text">Voortgang</span><span id="max-score">Maximale score: …</span></div></section>
+   <section class="score-panel" aria-label="Score en voortgang"><div class="score-data"><div><span class="tiny">SCORE</span><strong id="score">0</strong></div><div class="right"><span class="tiny">RANG</span><strong id="rank">Beginner</strong></div></div><div class="progress"><div id="progress-fill"></div></div><div class="score-footer"><span id="progress-text">Voortgang</span><span id="max-score">Maximale score: …</span></div></section>
    <section class="game" aria-label="Spel"><p class="instructions">Maak woorden met minimaal 4 letters.<br>Gebruik altijd de <strong>gele letter</strong>. Letters mogen vaker voorkomen.</p>
-     <div class="word-entry" id="word-entry" aria-live="polite"><span id="typed-word" class="placeholder">Jouw woord…</span><span class="cursor" aria-hidden="true"></span></div>
+     <div class="word-entry" id="word-entry" aria-live="polite"><span id="typed-word" class="placeholder">Typ hier</span><span class="cursor" aria-hidden="true"></span></div>
      <p class="feedback" id="feedback" role="status" aria-live="polite">Woordenlijst laden…</p>
      <div class="honeycomb" id="honeycomb" aria-label="Letters"></div>
-     <div class="actions"><button id="erase" class="small-button">⌫ <span>Wissen</span></button><button id="shuffle" class="small-button">⤨ <span>Husselen</span></button><button id="submit" class="submit-button">Invoeren ↵</button></div>
+     <div class="actions"><button id="erase" class="small-button"><span>Wissen</span></button><button id="shuffle" class="small-button"><span>Husselen</span></button><button id="submit" class="submit-button">Invoeren</button></div>
      <input id="keyboard-input" class="keyboard-input" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Typ een woord met je toetsenbord">
-     <p class="keyboard-hint">Je kunt ook typen met een toetsenbord.</p>
    </section>
    <section class="found"><div class="found-title"><h2>Gevonden woorden <span id="found-count">0</span></h2><button id="toggle-found" class="link-button" aria-expanded="true">Verbergen</button></div><div id="found-words" class="found-words"><p class="empty">Nog geen woorden gevonden. Succes!</p></div></section>
  </main>
